@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>米硕 · 个人站</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
+/* 按钮 */
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: #2b4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 页面 */
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* 图片 */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- 导航 -->
+    <div>
+        <button onclick="showPage(0)">基本信息</button>
+        <button onclick="showPage(1)">我的爱好</button>
+    </div>
+
+    <!-- 页面1：基本信息 -->
+    <div class="page active">
+        <h2>米硕</h2>
+        <p>男 · 数据科学专业</p>
+        <p>学校：昆明学院</p>
+        <p>家乡：安徽寿县</p>
+        <p>年龄：<span id="age"></span></p>
+    </div>
+
+    <!-- 页面2：爱好（带图片） -->
+    <div class="page">
+        <h3>我的爱好</h3>
+
+        <h4>🎧 听音乐</h4>
+        <img src="./个人网站/听音乐/bb6229fadd355097e5f83a538a74e62f.jpg">
+        <p>喜欢在安静的时候听歌放松。</p>
+
+        <h4>🌍 旅行</h4>
+        <img src="./个人网站/旅游/8d90487237943f0aedc3363141a06676.jpg">
+        <p>喜欢探索不同城市和风景。</p>
+
+        <h4>🎮 打游戏</h4>
+        <img src="./个人网站/打游戏/060b3921cf700830a777f9229102153c.jpg">
+        <p>平时会玩一些游戏放松自己。</p>
+    </div>
+
+</div>
+
+<script>
+// 页面切换
+function showPage(index) {
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.classList.remove("active"));
+    pages[index].classList.add("active");
+}
+
+// 年龄
+let birthYear = 2005;
+let age = new Date().getFullYear() - birthYear;
+document.getElementById("age").innerText = age;
+</script>
+
+</body>
+</html>
