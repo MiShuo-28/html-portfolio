@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>米硕 · 个人站</title>
+<title>米硕 · 个人信息</title>
 
 <style>
 body {
@@ -20,50 +20,17 @@ body {
     border-radius: 10px;
 }
 
-button {
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-    background: #2b4c7c;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.page {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin: 10px 0;
-}
-
 a {
     color: #2b4c7c;
     text-decoration: none;
     font-weight: bold;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="card">
-
-<div>
-    <button onclick="showPage(0)">基本信息</button>
-    <button onclick="showPage(1)">我的爱好</button>
-</div>
-
-<!-- 页面1 -->
-<div class="page active">
     <h2>米硕</h2>
     <p>姓名：米硕</p>
     <p>性别：男</p>
@@ -74,43 +41,13 @@ a {
     <p>家乡：安徽省寿县</p>
     <p>年龄：<span id="age"></span></p>
 
-    <!-- 超链接入口 -->
+    <!-- 跳转到爱好页面 -->
     <p>
-        👉 <a href="#" onclick="showPage(1)">点击查看我的爱好</a>
+        👉 <a href="hobby.html">我的个人爱好</a>
     </p>
-</div>
-
-<!-- 页面2 -->
-<div class="page">
-    <h3>我的爱好</h3>
-
-    <h4>🎧 听音乐</h4>
-    <img src="bb6229fadd355097e5f83a538a74e62f.jpg">
-    <p>喜欢在安静的时候听歌放松。</p>
-
-    <h4>🌍 旅行</h4>
-    <img src="8d90487237943f0aedc3363141a06676.jpg">
-    <p>喜欢探索不同城市和风景。</p>
-
-    <h4>🎮 打游戏</h4>
-    <img src="060b3921cf700830a777f9229102153c.jpg">
-    <p>平时会玩一些游戏放松自己。</p>
-
-    <!-- 返回链接 -->
-    <p>
-        👉 <a href="#" onclick="showPage(0)">返回基本信息</a>
-    </p>
-</div>
-
 </div>
 
 <script>
-function showPage(index) {
-    let pages = document.querySelectorAll(".page");
-    pages.forEach(p => p.classList.remove("active"));
-    pages[index].classList.add("active");
-}
-
 let birthYear = 2005;
 let age = new Date().getFullYear() - birthYear;
 document.getElementById("age").innerText = age;
